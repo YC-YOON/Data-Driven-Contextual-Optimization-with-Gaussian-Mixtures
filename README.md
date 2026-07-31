@@ -43,16 +43,33 @@ The repository implements the paper's three numerical studies:
 
 ## Environment
 
-The code is organized as Jupyter notebooks and was written for Python 3. Install the main open-source dependencies with:
+The code is organized as Jupyter notebooks and uses Python 3.11. Choose either the Conda setup (recommended) or the standard `venv`/pip setup below.
+
+### Option 1: Conda
+
+Create the environment from `environment.yml` and activate it:
 
 ```bash
-python -m venv .venv
+conda env create -f environment.yml
+conda activate contextual-gmm
+```
+
+To update an existing environment after the dependency files change, run:
+
+```bash
+conda env update -f environment.yml --prune
+```
+
+### Option 2: Python venv and pip
+
+```bash
+python3.11 -m venv .venv
 source .venv/bin/activate
 python -m pip install --upgrade pip
-python -m pip install \
-  jupyter numpy pandas scipy scikit-learn matplotlib tqdm joblib \
-  cvxpy torch normflows yfinance wrds
+python -m pip install -r requirements.txt
 ```
+
+On Windows, activate the virtual environment with `.venv\\Scripts\\activate` instead.
 
 Some experiments also require licensed optimization software:
 
@@ -126,4 +143,3 @@ If you use this repository, please cite:
 ## Data and licensing
 
 The source code in this repository is released under the [MIT License](LICENSE). Data files and data obtained from third-party services (including WRDS, Yahoo Finance, NLDAS, and PJM) may be governed by their respective providers' terms and are not relicensed by the MIT License unless explicitly stated.
-
