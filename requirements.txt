@@ -1,0 +1,26 @@
+# Notebook environment
+jupyterlab
+
+# Numerical computing and data processing
+numpy
+pandas
+scipy
+scikit-learn
+
+# Optimization (commercial solvers require separate licenses)
+cvxpy
+mosek
+gurobipy
+
+# Machine learning and normalizing flows
+torch
+normflows
+
+# Parallelism, progress, and visualization
+joblib
+tqdm
+matplotlib
+
+# Financial-data access
+yfinance
+wrds
